@@ -1105,7 +1105,7 @@ window.__require = function e(t, n, o) {
             m = function(e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
-                    // return t.bgLayer = null, t.bgCamera = null, t.mainCamera = null, t.fruitNode = null, t.lineNode = null, t.bazieffect = null, t.downEffect = null, t.fruitPre = null, t.fruitS = [], t.step = 0, t.guideTime = 0, t.targetFruit = null, t.fruitHeigth = -1200, t.endOne = 0, t
+                    return t.bgLayer = null, t.bgCamera = null, t.mainCamera = null, t.fruitNode = null, t.lineNode = null, t.bazieffect = null, t.downEffect = null, t.fruitPre = null, t.fruitS = [], t.step = 0, t.guideTime = 0, t.targetFruit = null, t.fruitHeigth = -1200, t.endOne = 0, t
                 }
                 var n;
                 return o(t, e), n = t, t.prototype.onLoad = function() {
@@ -1816,7 +1816,7 @@ window.__require = function e(t, n, o) {
             gameEnd1: function() {
                 var e = this,
                     t = this.returnCurrentLanType();
-                1 == t ? (this.gameOverT1.string = "游戏结束", this.gameOverT2.string = "刮开有奖") : 2 == t ? (this.gameOverT1.string = "刮开有奖", this.gameOverT2.string = "刮开有奖") : 4 == t ? (this.gameOverT1.string = "刮开有奖", this.gameOverT2.string = "刮开有奖") : (this.gameOverT1.string = "Game Over", this.gameOverT2.string = "Click to view the score"), this.gameOveEndBool = !0, this.gameOverT1.node.zIndex = 999, this.gameOverT2.node.zIndex = 999, this.gameOverToEnd.zIndex = 999, this.gameOverT1.node.opacity = 0, this.gameOverT1.node.y = 100, this.gameOverToEnd.y = 0, this.gameOverT1.node.runAction(cc.sequence(cc.delayTime(.2), cc.spawn(cc.fadeIn(1), cc.moveBy(1, 0, -50)), cc.delayTime(.3))), this.gameOverToEnd.runAction(cc.sequence(cc.fadeTo(1, 100), cc.callFunc(function() {
+                1 == t ? (this.gameOverT1.string = "游戏结束", this.gameOverT2.string = "彭诗又菜又爱玩") : 2 == t ? (this.gameOverT1.string = "彭诗又菜又爱玩", this.gameOverT2.string = "彭诗又菜又爱玩") : 4 == t ? (this.gameOverT1.string = "彭诗又菜又爱玩", this.gameOverT2.string = "彭诗又菜又爱玩") : (this.gameOverT1.string = "Game Over", this.gameOverT2.string = "PengSiYouCaiYouAiWan"), this.gameOveEndBool = !0, this.gameOverT1.node.zIndex = 999, this.gameOverT2.node.zIndex = 999, this.gameOverToEnd.zIndex = 999, this.gameOverT1.node.opacity = 0, this.gameOverT1.node.y = 100, this.gameOverToEnd.y = 0, this.gameOverT1.node.runAction(cc.sequence(cc.delayTime(.2), cc.spawn(cc.fadeIn(1), cc.moveBy(1, 0, -50)), cc.delayTime(.3))), this.gameOverToEnd.runAction(cc.sequence(cc.fadeTo(1, 100), cc.callFunc(function() {
                     e.gameOverToEnd.getComponent(cc.Button).enabled = !0
                 }))), this.gameOverT2.node.opacity = 0, this.gameOverT2.node.y = this.gameOverT1.node.y - 100, this.gameOverT2.node.runAction(cc.sequence(cc.delayTime(.2), cc.spawn(cc.fadeIn(1), cc.moveBy(1, 0, -50)), cc.delayTime(.3))), this.gameOverT2.node.runAction(cc.sequence(cc.delayTime(2), cc.scaleTo(.3, 1.2).easing(cc.easeSineInOut()), cc.scaleTo(.3, 1).easing(cc.easeSineInOut()))).repeatForever()
             },
@@ -1917,7 +1917,7 @@ window.__require = function e(t, n, o) {
 
                     console.log(b.default.Instance.targetFruit.destroy())
                     console.log(b.default.Instance.targetFruit.setPosition(1000,-200))
-                    b.default.Instance.createOneFruit(Math.floor(Math.random()*6))
+                    b.default.Instance.createOneFruit(Math.floor(Math.random()*5))
                 }, t.prototype.TestPasslevel = function() {
                     var e = this;
                     this.lerpCtrl = !0, this.nowYQ >= this.passlevelYQ && (this.levelPanel.children[2].runAction(cc.sequence(cc.delayTime(1.3), cc.callFunc(function() {
@@ -3388,7 +3388,7 @@ window.__require = function e(t, n, o) {
                             }).repeatForever().start();
                             var s = new cc.Node;
                             s.addComponent(cc.Sprite).spriteFrame = l.default.Instance.fruit[10], s.parent = c, s.position = cc.v2(0), d.default.Instance.Play(4, !1, 1), i.default.Instance.ribbonEffect(cc.v2(0, 0)), c.runAction(cc.sequence(cc.spawn(cc.jumpBy(1, 0, 0, 300, 1), cc.scaleTo(1, 1)), cc.delayTime(1), cc.spawn(cc.moveTo(1, cc.v2(0, 500)), cc.scaleTo(1, 0)), cc.callFunc(function() {
-                                a.default.score += 100, u.default.Instance.SetScoreTween(a.default.score), e.active = !1, a.default.playerTouch = !0, c.destroy()
+                                a.default.score += 200, u.default.Instance.SetScoreTween(a.default.score), e.active = !1, a.default.playerTouch = !0, c.destroy()
                             }))), n.node.active = !1, t.node.active = !1, n.node.destroy(), t.node.destroy()
                         }).start()))
                     }
