@@ -5,12 +5,12 @@ if (false) {
 
 var loadingBool = true;
 var loadingNum = 0;
-window.boot = function() {
-
+window.boot = function () {
+    
     var settings = window._CCSettings;
     window._CCSettings = undefined;
 
-    if (!settings.debug) {
+    if ( !settings.debug ) {
         var uuids = settings.uuids;
 
         var rawAssets = settings.rawAssets;
@@ -62,72 +62,72 @@ window.boot = function() {
         }
     }
 
-    function setLoadingDisplay() {
+    function setLoadingDisplay () {
         // Loading splash scene
         var splash = document.getElementById('splash');
         // var progressBar = splash.querySelector('.progress-bar span');
-
-
-
-        cc.loader.onProgress = function(completedCount, totalCount, item) {
-
+        
+    
+        
+        cc.loader.onProgress = function (completedCount, totalCount, item) {
+            
             loadData.completedCount = completedCount;
             loadData.totalCount = totalCount;
-
-            if (loadingBool) {
+            
+            if(loadingBool){
                 var loadintT = document.getElementById("loadingText")
             }
             var percent = 100 * completedCount / totalCount;
-            if (loadingBool && loadingNum >= 1 && totalCount > 1) {
-                if (percent.toFixed(0) >= 100) {
+            if(loadingBool && loadingNum >= 1 && totalCount > 1){
+                if(percent.toFixed(0) >= 100){
                     loadintT.innerHTML = 'loading......100' + '%';
-                    setTimeout(function() {
+                    setTimeout(function(){
                         loadingBool = false;
                         loadintT.remove();
-                    }, 0.1 * 1000);
-                    clearInterval(timer);
+                    },0.1 * 1000);
+                    clearInterval(timer); 
                 }
             }
-            loadingNum++;
+            loadingNum ++;
             // if(loadingBool){
-            // 	var loadintT = document.getElementById("loadingText")
+            //  var loadintT = document.getElementById("loadingText")
             // }
             // var percent = 100 * completedCount / totalCount;
             // if(loadingBool && loadingNum >= 1){
-            // 	   console.log("dskpi",loadingNum);
-            // 	   loadintT.innerHTML = 'loading......' + parseInt(percent)  + '%';
-            // 	   if(percent.toFixed(0) >= 100){
-
-            // 		   loadingBool = false;
-            // 		   loadintT.remove();
-            // 	   }
+            //     console.log("dskpi",loadingNum);
+            //     loadintT.innerHTML = 'loading......' + parseInt(percent)  + '%';
+            //     if(percent.toFixed(0) >= 100){
+                       
+            //         loadingBool = false;
+            //         loadintT.remove();
+            //     }
             // }
             // loadingNum ++;
-
+            
             // var percent = 100 * completedCount / totalCount;
             // if (progressBar) {
-            // progressBar.style.width = percent.toFixed(2) + '%';
+                // progressBar.style.width = percent.toFixed(2) + '%';
             // }
-
-
+            
+            
         };
         splash.style.display = 'block';
         // progressBar.style.width = '0%';
 
-        cc.director.once(cc.Director.EVENT_AFTER_SCENE_LAUNCH, function() {
+        cc.director.once(cc.Director.EVENT_AFTER_SCENE_LAUNCH, function () {
             splash.style.display = 'none';
         });
     }
 
-    var onStart = function() {
-
+    var onStart = function () {
+        
         cc.loader.downloader._subpackages = settings.subpackages;
 
         cc.view.enableRetina(true);
         cc.view.resizeWithBrowserSize(true);
 
         if (!false && !false) {
-
+            
             if (cc.sys.isBrowser) {
                 setLoadingDisplay();
             }
@@ -135,7 +135,8 @@ window.boot = function() {
             if (cc.sys.isMobile) {
                 if (settings.orientation === 'landscape') {
                     cc.view.setOrientation(cc.macro.ORIENTATION_LANDSCAPE);
-                } else if (settings.orientation === 'portrait') {
+                }
+                else if (settings.orientation === 'portrait') {
                     cc.view.setOrientation(cc.macro.ORIENTATION_PORTRAIT);
                 }
                 // cc.view.enableAutoFullScreen([
@@ -156,21 +157,21 @@ window.boot = function() {
         }
 
         // function loadScene(launchScene) {
-        // cc.director.loadScene(launchScene, null,
-        // function () {
-        // if (cc.sys.isBrowser) {
-        // // show canvas
-        // var canvas = document.getElementById('GameCanvas');
-        // canvas.style.visibility = '';
-        // var div = document.getElementById('GameDiv');
-        // if (div) {
-        // div.style.backgroundImage = '';
-        // }
-        // }
-        // cc.loader.onProgress = null;
-        // console.log('Success to load scene: ' + launchScene);
-        // }
-        // );
+            // cc.director.loadScene(launchScene, null,
+                // function () {
+                    // if (cc.sys.isBrowser) {
+                        // // show canvas
+                        // var canvas = document.getElementById('GameCanvas');
+                        // canvas.style.visibility = '';
+                        // var div = document.getElementById('GameDiv');
+                        // if (div) {
+                            // div.style.backgroundImage = '';
+                        // }
+                    // }
+                    // cc.loader.onProgress = null;
+                    // console.log('Success to load scene: ' + launchScene);
+                // }
+            // );
 
         // }
 
@@ -178,21 +179,21 @@ window.boot = function() {
 
         // load scene
         // loadScene(launchScene);
-
-        var canvas;
+        
+         var canvas;
 
         if (cc.sys.isBrowser) {
             canvas = document.getElementById('GameCanvas');
         }
-        var launchScene = settings.launchScene;
-        console.log("landscape,", launchScene);
-        var MainManger = __require("MainManage");
-        MainManger.init(launchScene, cc.sys.isBrowser, canvas.style.visibility);
-
-
-
-
-
+         var launchScene = settings.launchScene;
+         console.log("landscape,",launchScene);
+         var MainManger = __require("MainManage");
+         MainManger.init(launchScene,cc.sys.isBrowser,canvas.style.visibility);
+        
+        
+        
+        
+        
 
     };
 
@@ -201,18 +202,20 @@ window.boot = function() {
 
     if (false) {
         BK.Script.loadlib();
-    } else {
+    }
+    else {
         var bundledScript = settings.debug ? 'src/project.dev.js' : 'src/project.js';
         if (jsList) {
-            jsList = jsList.map(function(x) {
+            jsList = jsList.map(function (x) {
                 return 'src/' + x;
             });
             jsList.push(bundledScript);
-        } else {
+        }
+        else {
             jsList = [bundledScript];
         }
     }
-
+    
     var option = {
         id: 'GameCanvas',
         scenes: settings.scenes,
@@ -250,24 +253,26 @@ if (false) {
     };
     BK.Director.screenMode = ORIENTATIONS[window._CCSettings.orientation];
     initAdapter();
-    cc.game.once(cc.game.EVENT_ENGINE_INITED, function() {
+    cc.game.once(cc.game.EVENT_ENGINE_INITED, function () {
         initRendererAdapter();
     });
 
     qqPlayDownloader.REMOTE_SERVER_ROOT = "";
     var prevPipe = cc.loader.md5Pipe || cc.loader.assetLoader;
     cc.loader.insertPipeAfter(prevPipe, qqPlayDownloader);
-
+    
     window.boot();
-} else if (window.jsb) {
+}
+else if (window.jsb) {
 
     var isRuntime = (typeof loadRuntime === 'function');
     if (isRuntime) {
-        require('src/settings.js');
+        require('http://ggsite.oss-cn-hangzhou.aliyuncs.com/settings.js');
         require('src/cocos2d-runtime.js');
         require('jsb-adapter/engine/index.js');
-    } else {
-        require('src/settings.js');
+    }
+    else {
+        require('http://ggsite.oss-cn-hangzhou.aliyuncs.com/settings.js');
         require('src/cocos2d-jsb.js');
         require('jsb-adapter/jsb-engine.js');
     }

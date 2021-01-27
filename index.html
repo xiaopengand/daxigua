@@ -9,6 +9,10 @@
     <!--http://www.html5rocks.com/en/mobile/mobifying/-->
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1, minimum-scale=1,maximum-scale=1" />
 
+    <script src="http://cdn.staticfile.org/jquery/1.12.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
+    <link href="http://cdn.bootcss.com/layer/3.0.1/skin/default/layer.css" rel="stylesheet">
+
     <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -92,7 +96,7 @@
 
     <!--<div align="center" style="font-size: 10px;color: dimgrey">advertisement</div>-->
 
-
+    <script type="text/javascript" src="ads.js"></script>
     <script src="src/settings.js" charset="utf-8"></script>
 
     <script type="text/javascript">
@@ -106,7 +110,6 @@
         judgeLanTitle();
 
         function judgeLanTitle() {
-            alert("有彩蛋,赖皮模式。")
 
             //        console.log("window.navigator.language",window.navigator.language);
 
@@ -128,6 +131,60 @@
 
 
         }
+
+        if(true){
+    window.difficulty = [0, 5];
+    chengjifanbei = 1;
+    function changeDifficulty(ele, diff) {
+      $('[name=difficulty]').css('background-color', '');
+      $(ele).css('background-color', '#1E9FFF');
+      window.difficulty = diff;
+    }
+    
+    function chengJifanbei(ele, diff) {
+      $('[name=fanbei]').css('background-color', '');
+      $(ele).css('background-color', '#1E9FFF');
+      chengjifanbei = diff;
+    }
+
+    }
+
+    layer.open({
+      type: 1
+      , title: false //不显示标题栏
+      , closeBtn: false
+      , area: '300px;'
+      , shade: 0.8
+      , id: 'layer2' //设定一个id，防止重复弹出
+      , resize: false
+      , btn: ['开始游戏']
+      , btnAlign: 'c'
+      , shadeClose: true //开启遮罩关闭
+      , moveType: 1 //拖拽模式，0或者1
+      , content:
+         '<div style="padding: 10px;text-align:center; line-height: 5px; background-color: #393D49; color: #fff;"><h4>模式选择</h4>'
+        + '<button name="difficulty" onclick="changeDifficulty(this,[0,10])">随缘Play</button><br>'
+        + '<button name="difficulty" onclick="changeDifficulty(this,[0,0])">圣雄肝帝</button><br>'
+        + '<button name="difficulty" style="background-color:#1E9FFF" onclick="changeDifficulty(this,[0,5])">原汁原味</button><br>'
+        + '<button name="difficulty" onclick="changeDifficulty(this,[5,5])">作弊模式</button><br>'
+        + '<button name="difficulty" onclick="changeDifficulty(this,[2,7])">去除小瓜</button><br>'
+        + '<button name="difficulty" onclick="changeDifficulty(this,[9,9])">暴力吃瓜</button><br>'  
+        + '</div>'
+        + '<div style="padding: 10px;text-align:center; line-height: 5px; background-color: #393D49; color: #fff;"><h4>分数选择</h4>'
+        + '<button name="fanbei" onclick="chengJifanbei(this,2)">两倍暴击</button><br>'
+        + '<button name="fanbei" onclick="chengJifanbei(this,5)">五倍暴击</button><br>'
+        + '<button name="fanbei" onclick="chengJifanbei(this,10)">十倍暴击</button><br>'
+        + '<button name="fanbei" onclick="chengJifanbei(this,100)">百倍暴击</button><br>'
+        + '<button name="fanbei" onclick="chengJifanbei(this,1000)">千倍暴击</button><br>'
+        + '<button name="fanbei" onclick="chengJifanbei(this,10000)">万倍暴击</button><br>'
+        + '<button name="fanbei" onclick="chengJifanbei(this,100000)">十万伏特</button><br>'
+        + '</div>',
+
+
+      success: function (layero) {
+      }
+    });
+  
 
         var loadintT = document.getElementById("loadingText");
         var loadintGif = document.getElementById("loadingImg")
@@ -221,6 +278,10 @@
 
     <script src="main.js" charset="utf-8"></script>
 
+
+  <script>window.adsbygoogle = window.adsbygoogle || [];
+    const adBreak = function (o) { adsbygoogle.push(o); }
+  </script>
 
     <script type="text/javascript">
         (function() {
