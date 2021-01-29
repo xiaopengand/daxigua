@@ -1,5 +1,6 @@
 ## 合成大西瓜
-演示地址：https://xpand.gitee.io/xigua
+原版演示地址：http://xpand.gitee.io/daxigua
+魔改版演示地址：https://xpand.gitee.io/xigua
 
 '葡萄' -> '樱桃' -> '橘子' -> '柠檬' -> '猕猴桃' -> '西红柿' -> '桃' -> '菠萝' -> '椰子' -> '西瓜' -> '大西瓜'
 
