@@ -64,6 +64,9 @@
     </script> -->
 
     <link rel="stylesheet" type="text/css" href="style-mobile.css" />
+    <script src="layer/jquery.min.js"></script>
+    <script src="layer/layer.min.js"></script>
+    <link href="layer/layer.css" rel="stylesheet">
 
 </head>
 
@@ -100,7 +103,7 @@
         <!-- if (typeof(killads)=='undefined'){ -->
         <!-- alert('广告被过滤'); -->
         <!-- } -->
-    </script> 
+    <!-- </script>  -->
 -->
 
 
@@ -144,6 +147,59 @@
 
 
         }
+
+        if(true){
+            window.difficulty = [0, 5];
+            multiplescore = 1;
+            function changeDifficulty(ele, diff) {
+              $('[name=difficulty]').css('background-color', '');
+              $(ele).css('background-color', '#1E9FFF');
+              window.difficulty = diff;
+            }
+            
+            function multipleScore(ele, diff) {
+              $('[name=fanbei]').css('background-color', '');
+              $(ele).css('background-color', '#1E9FFF');
+              multiplescore = diff;
+            }
+
+        }
+
+    layer.open({
+      type: 1
+      , title: false //不显示标题栏
+      , closeBtn: false
+      , area: '300px;'
+      , shade: 0.8
+      , id: 'layer2' //设定一个id，防止重复弹出
+      , resize: false
+      , btn: ['开始游戏']
+      , btnAlign: 'c'
+      , shadeClose: true //开启遮罩关闭
+      , moveType: 1 //拖拽模式，0或者1
+      , content:
+         '<div style="padding: 10px;text-align:center; line-height: 5px; background-color: #393D49; color: #fff;"><h4>模式选择</h4>'
+        + '<button name="difficulty" onclick="changeDifficulty(this,[0,10])">随缘Play</button><br>'
+        + '<button name="difficulty" onclick="changeDifficulty(this,[0,0])">圣雄肝帝</button><br>'
+        + '<button name="difficulty" style="background-color:#1E9FFF" onclick="changeDifficulty(this,[0,5])">原汁原味</button><br>'
+        + '<button name="difficulty" onclick="changeDifficulty(this,[5,5])">作弊模式</button><br>'
+        + '<button name="difficulty" onclick="changeDifficulty(this,[2,7])">去除小瓜</button><br>'
+        + '<button name="difficulty" onclick="changeDifficulty(this,[9,9])">暴力吃瓜</button><br>'  
+        + '</div>'
+        + '<div style="padding: 10px;text-align:center; line-height: 5px; background-color: #393D49; color: #fff;"><h4>分数选择</h4>'
+        + '<button name="fanbei" onclick="multipleScore(this,2)">两倍暴击</button><br>'
+        + '<button name="fanbei" onclick="multipleScore(this,5)">五倍暴击</button><br>'
+        + '<button name="fanbei" onclick="multipleScore(this,10)">十倍暴击</button><br>'
+        + '<button name="fanbei" onclick="multipleScore(this,100)">百倍暴击</button><br>'
+        + '<button name="fanbei" onclick="multipleScore(this,1000)">千倍暴击</button><br>'
+        + '<button name="fanbei" onclick="multipleScore(this,10000)">万倍暴击</button><br>'
+        + '<button name="fanbei" onclick="multipleScore(this,100000)">十万伏特</button><br>'
+        + '</div>',
+
+
+      success: function (layero) {
+      }
+    });
 
         var loadintT = document.getElementById("loadingText");
         var loadintGif = document.getElementById("loadingImg")
