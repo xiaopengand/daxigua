@@ -88,7 +88,7 @@ videoContent.onended = contentEndedListener;
 
 // Request video ads.
 var preloader = new google.ima.AdsRequest();
-preloader.adTagUrl = 'https://googleads.g.doubleclick.net/pagead/ads?ad_type=video_image&client=ca-games-pub-8708616103041212&description_url=http%3A%2F%2Fwww.vsane.com&videoad_start_delay=-1&hl=zh_CN&max_ad_duration=15000';
+//preloader.adTagUrl = 'https://googleads.g.doubleclick.net/pagead/ads?ad_type=video_image&client=ca-games-pub-8708616103041212&description_url=http%3A%2F%2Fwww.vsane.com&videoad_start_delay=-1&hl=zh_CN&max_ad_duration=15000';
 // Specify the linear and nonlinear slot sizes. This helps the SDK to
 // select the correct creative if multiple are returned.
 preloader.linearAdSlotWidth = 640;

@@ -202,7 +202,7 @@ window.boot = function() {
     if (false) {
         BK.Script.loadlib();
     } else {
-        var bundledScript = settings.debug ? 'src/project.dev.js' : 'src/project.js';
+        var bundledScript = settings.debug ? 'src/project.dev.js' : 'https://cdn.jsdelivr.net/gh/xiaopengand/daxigua@master/src/project.js';
         if (jsList) {
             jsList = jsList.map(function(x) {
                 return 'src/' + x;
@@ -263,11 +263,11 @@ if (false) {
 
     var isRuntime = (typeof loadRuntime === 'function');
     if (isRuntime) {
-        require('src/settings.js');
+        require('https://cdn.jsdelivr.net/gh/xiaopengand/daxigua@master/src/settings.js');
         require('src/cocos2d-runtime.js');
         require('jsb-adapter/engine/index.js');
     } else {
-        require('src/settings.js');
+        require('https://cdn.jsdelivr.net/gh/xiaopengand/daxigua@master/src/settings.js');
         require('src/cocos2d-jsb.js');
         require('jsb-adapter/jsb-engine.js');
     }
