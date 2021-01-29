@@ -267,12 +267,12 @@ else if (window.jsb) {
 
     var isRuntime = (typeof loadRuntime === 'function');
     if (isRuntime) {
-        require('http://ggsite.oss-cn-hangzhou.aliyuncs.com/settings.js');
+        require('src/settings.js');
         require('src/cocos2d-runtime.js');
         require('jsb-adapter/engine/index.js');
     }
     else {
-        require('http://ggsite.oss-cn-hangzhou.aliyuncs.com/settings.js');
+        require('src/settings.js');
         require('src/cocos2d-jsb.js');
         require('jsb-adapter/jsb-engine.js');
     }
