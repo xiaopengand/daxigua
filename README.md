@@ -52,7 +52,7 @@
 
 分支「mian」是旧的源码，水果图片在一张大图片里。魔改了模式选择和分数选择。
 
-分支「cdnWeb」是使用了jsdelivr加速，演示站gitee上用的就是这个（卡是因为giett流量小）
+分支「cdnWeb」是使用了jsdelivr加速，演示站gitee上用的就是这个（卡是因为gitee流量小）
 
 分支「default」是最新源码，未改动（结束的全屏广告都有）。
 
