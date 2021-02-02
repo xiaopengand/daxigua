@@ -1,9 +1,9 @@
 ## 合成大西瓜
 
-（演示卡是因为免费的gitee顶不住）
-原版演示地址：http://xpand.gitee.io/daxigua
+（gitee好像把图片资源屏蔽了，改到vercel部署了）
 
-魔改版演示地址：https://xpand.gitee.io/xigua
+
+魔改版演示地址：https://xiaoxigua.vercel.app/
 
 
 
@@ -49,8 +49,11 @@
 
 # 分支说明
 分支「master」是最新的源码，各种水果图片分开了。魔改了模式选择和分数选择。修复了，结算分数不正常。
+
 分支「mian」是旧的源码，水果图片在一张大图片里。魔改了模式选择和分数选择。
+
 分支「cdnWeb」是使用了jsdelivr加速，演示站gitee上用的就是这个（卡是因为giett流量小）
+
 分支「default」是最新源码，未改动（结束的全屏广告都有）。
 
 # 怎么修改水果图片
